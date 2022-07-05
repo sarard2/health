@@ -110,22 +110,22 @@ if selected=="Data":
     with col2:
         st.header("Sample Dataset on Stroke from Kaggle")
         AgGrid(data)
-#Visuals Page
+
+        #Visuals Page
 if selected=="Visuals":
     col1,col2=st.columns(2)
     with col1:
          strokeages=pd.read_csv("allages.csv")
          country_options=strokeages["Location"].unique().tolist()
-         country_select=st.selectbox('Which country would you like to see?',country_options)
+         country_select=st.selectbox('In which country do you want to trace the number of deaths by stroke?',country_options)
          number_stroke=strokeages[strokeages["Metric"]=="Number"]
-
 
          #age_options=strokedata["Age"].unique().tolist()
          #ages_select=st.multiselect('Which age group would you like to see?',age_options)
          filter_dff=number_stroke[number_stroke["Location"]==country_select]
          #dff=yearly.groupby("year").sum()
          #df_groupby=dff.reset_index()
-         figure8=px.area(filter_dff, x='Year', y="val",color="Sex",title="Stroke according to Residence Type",
+         figure8=px.area(filter_dff, x='Year', y="val",color="Sex",title="Deaths by Stroke Through Time According to Gender",
          width=400, height=400,
          color_discrete_map={1: "cadetblue", 0: "darkturquoise"},
          template="simple_white")
@@ -165,10 +165,10 @@ if selected=="Exploration":
     col1,col2=st.columns(2)
     with col1:
         gender_options=data["gender"].unique().tolist()
-        gender_select=st.multiselect('Which gender would you like to see?',gender_options,"Male")
+        gender_select=st.multiselect('Which gender in the sample are you interested in studying?',gender_options,"Male")
     with col2:
         age_options=data["age"].unique().tolist()
-        age_select=st.multiselect('Which age?',age_options,64)
+        age_select=st.multiselect('Which age in the sample are you interested in studying?',age_options,64)
         filter_df=data[data["gender"].isin(gender_select)&data["age"].isin(age_select)]
     with col1:
         figure1=px.histogram(filter_df, y='residence_type',color="stroke", barmode='group',title="Stroke according to Residence Type",
