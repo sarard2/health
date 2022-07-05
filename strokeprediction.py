@@ -319,7 +319,7 @@ if selected =="Prediction":
      bmi=st.number_input("What is your most recent BMI?",min_value = min_bmi,max_value = max_bmi)
  with col2:
 #Model of Logistic Regression From Pickle File
-     lrmodel=pickle.load(open(r"C:\Users\Sara\Desktop\Healthcare\logisticmodel.pkl",'rb'))
+     lrmodel=pickle.load(open("logisticmodel.pkl",'rb'))
 #Prediction given the following variables
      par = [gender_inp , married_inp , work_inp ,resi_inp, smoke_inp,age,hype_inp,heart_inp,glucose,bmi]
 
