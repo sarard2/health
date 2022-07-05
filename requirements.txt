@@ -6,5 +6,4 @@ seaborn
 streamlit
 streamlit-option-menu
 sklearn
-AgGrid
 pycountry
