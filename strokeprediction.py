@@ -164,7 +164,7 @@ if selected=="Visuals":
 if selected=="Exploration":
     my_expander = st.expander(label='Search and Filter Graphs Below')
     with my_expander:
-        clicked = st.button('Click me!')
+       
         col3,col4=st.columns(2)
         with col3:
             gender_options=data["gender"].unique().tolist()
