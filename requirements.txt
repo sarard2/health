@@ -7,4 +7,4 @@ streamlit
 streamlit-option-menu
 sklearn
 pycountry
-st_aggrid
+streamlit-agGrid
