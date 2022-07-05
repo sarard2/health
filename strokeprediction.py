@@ -121,7 +121,7 @@ if selected=="Visuals":
          my_expander1 = st.expander(label='Press to Edit the Metric!')
          with my_expander1:
                 country_select=st.selectbox('In which country do you want to trace the number of deaths by stroke?',country_options)
-                metric_select=st.selectbox("Which metric are you more intesrested in?")
+                metric_select=st.selectbox("Which metric are you more intesrested in?",metric_options)
                 #number_stroke=strokeages[strokeages["Metric"]=="Number"]
          filter_dff=strokeages[strokeages["Location"]==country_select]&strokeages[strokeages["Metric"]==metric_select]
 
