@@ -117,14 +117,12 @@ if selected=="Visuals":
     with col1:
          strokeages=pd.read_csv("allages.csv")
          country_options=strokeages["Location"].unique().tolist()
-         country_select=st.selectbox('In which country do you want to trace the number of deaths by stroke?',country_options)
-         number_stroke=strokeages[strokeages["Metric"]=="Number"]
-
-         #age_options=strokedata["Age"].unique().tolist()
-         #ages_select=st.multiselect('Which age group would you like to see?',age_options)
+         my_expander1 = st.expander(label='Press to Edit the Metric!')
+            with my_expander1:
+                country_select=st.selectbox('In which country do you want to trace the number of deaths by stroke?',country_options)
+                number_stroke=strokeages[strokeages["Metric"]=="Number"]
          filter_dff=number_stroke[number_stroke["Location"]==country_select]
-         #dff=yearly.groupby("year").sum()
-         #df_groupby=dff.reset_index()
+
          figure8=px.area(filter_dff, x='Year', y="val",color="Sex",title="Deaths by Stroke Through Time According to Gender",
          width=400, height=400,
          color_discrete_map={1: "cadetblue", 0: "darkturquoise"},
@@ -136,10 +134,7 @@ if selected=="Visuals":
          legend=dict(
          title="Stroke", orientation="h", y=1, yanchor="bottom", x=0.5, xanchor="center"))
          st.plotly_chart(figure8,use_container_width=True)
-         #figure5=px.scatter(yearly, x='year', y="val",color="location")
-         #st.plotly_chart(figure5,use_container_width=True)
-         #figure11=px.bar(thisyear, x="location",y='val')
-         #st.plotly_chart(figure11,use_container_width=True)
+
 
     with col2:
         thisyear=yearly[yearly["year"]==2019]
@@ -162,7 +157,7 @@ if selected=="Visuals":
 
 #Exploration Page
 if selected=="Exploration":
-    my_expander = st.expander(label='Search and Filter Graphs Below')
+    my_expander = st.expander(label='Filter the Graphs')
     with my_expander:
        
         col3,col4=st.columns(2)
