@@ -9,7 +9,7 @@ from sklearn.model_selection import cross_val_score
 
 
 #Reading data
-data=pd.read_csv("https://raw.githubusercontent.com/sarard2/health/main/healthdata.csv")
+data=pd.read_csv("healthdata.csv")
 #Inspecting the data
 print(data.head())
 print(data.info())
@@ -108,5 +108,5 @@ import pickle
 file = open(r"C:\Users\Sara\Desktop\logisticmodel.pkl", "wb")
 pickle.dump(lr , file)
 file.close()
-model = open(r"C:\Users\Sara\Desktop\logisticmodel.pkl", "rb")
+model = open("logisticmodel.pkl", "rb")
 forest = pickle.load(model)
