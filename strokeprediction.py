@@ -73,7 +73,7 @@ bmi_mean = data['bmi'].mean().round(1)
 data = data.fillna(value=bmi_mean)
 #strokedata=pd.read_csv("strokedata.csv")
 # create a column for code
-strokedata['Country_Code']=alpha3code(strokedata.Location)
+#strokedata['Country_Code']=alpha3code(strokedata.Location)
 
 #Setting Default Theme for plotly graphs
 #pio.templates.default = "simple_white"
