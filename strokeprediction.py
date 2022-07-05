@@ -118,7 +118,7 @@ if selected=="Visuals":
          strokeages=pd.read_csv("allages.csv")
          country_options=strokeages["Location"].unique().tolist()
          my_expander1 = st.expander(label='Press to Edit the Metric!')
-            with my_expander1:
+         with my_expander1:
                 country_select=st.selectbox('In which country do you want to trace the number of deaths by stroke?',country_options)
                 number_stroke=strokeages[strokeages["Metric"]=="Number"]
          filter_dff=number_stroke[number_stroke["Location"]==country_select]
