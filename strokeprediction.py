@@ -162,19 +162,18 @@ if selected=="Visuals":
 
 #Exploration Page
 if selected=="Exploration":
-    col1,col2=st.columns(2)
     my_expander = st.expander(label='Search and Filter Graphs Below')
     with my_expander:
         clicked = st.button('Click me!')
-        col1,col2=st.columns(2)
-        with col1:
+        col3,col4=st.columns(2)
+        with col3:
             gender_options=data["gender"].unique().tolist()
             gender_select=st.multiselect('Which gender in the sample are you interested in studying?',gender_options,"Male")
-        with col2:
+        with col4:
             age_options=data["age"].unique().tolist()
             age_select=st.multiselect('Which age in the sample are you interested in studying?',age_options,64)
             filter_df=data[data["gender"].isin(gender_select)&data["age"].isin(age_select)]
-    
+    col1,col2=st.columns(2)
     with col1:
         figure1=px.histogram(filter_df, y='residence_type',color="stroke", barmode='group',title="Stroke according to Residence Type",
         width=400, height=400,
