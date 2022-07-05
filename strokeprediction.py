@@ -71,7 +71,7 @@ def alpha3code(column):
 data=pd.read_csv("healthdata.csv")
 bmi_mean = data['bmi'].mean().round(1)
 data = data.fillna(value=bmi_mean)
-strokedata=pd.read_csv("strokedata.csv")
+#strokedata=pd.read_csv("strokedata.csv")
 # create a column for code
 strokedata['Country_Code']=alpha3code(strokedata.Location)
 
@@ -107,7 +107,7 @@ if selected=="Data":
     col1,col2=st.columns(2)
     with col1:
         st.header("Global Burder of Disease on Stroke")
-        AgGrid(strokedata)
+        #AgGrid(strokedata)
     with col2:
         st.header("Sample Dataset on Stroke from Kaggle")
         AgGrid(data)
