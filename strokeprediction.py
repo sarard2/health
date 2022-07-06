@@ -139,18 +139,7 @@ if selected=="Data":
 #Visuals Page
 if selected=="Visuals":
     thisyear=yearly[yearly["year"]==2019]
-    lebanon=yearly[yearly["location"]=="Lebanon"]
-    figure15=px.bar(lebanon, x='year',y="val",title="Stroke according to Residence Type",
-        width=400, height=400,
-        color_discrete_map={1: "cadetblue", 0: "darkturquoise"},
-        template="simple_white")
-    figure15.update_layout(xaxis_title=None,yaxis_title=None)
-    figure15.update_xaxes(showgrid=False,zeroline=False)
-    figure15.update_yaxes(showgrid=False,showticklabels = True)
-    figure15.update_layout( # customize font and legend orientation & position
-         legend=dict(
-        title="Stroke", orientation="h", y=1, yanchor="bottom", x=0.5, xanchor="center"))
-    st.plotly_chart(figure15,use_container_width=True)    
+     
     #Map showing death across the globe in 2019
     st.subheader("Stroke Deaths across the Globe in 2019")
     fig = go.Figure(data=go.Choropleth(
