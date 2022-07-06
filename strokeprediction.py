@@ -149,8 +149,13 @@ if selected=="Visuals":
     legend=dict(
     title="Gender", orientation="h",y=1, yanchor="bottom", x=0.5, xanchor="center"))
     st.plotly_chart(figure8,use_container_width=True)       
+    
+    
+    st.markdown("""<hr style="height:5px;border:none;color:#00ced1;background-color:#808080;" /> """, unsafe_allow_html=True)
+    
     thisyear=yearly[yearly["year"]==2019]
     #Map showing death across the globe in 2019
+    st.subheader("Stroke Deaths across the Globe in 2019")
     fig = go.Figure(data=go.Choropleth(
     locations = thisyear['Country_Code'],
     z = thisyear['val'],
