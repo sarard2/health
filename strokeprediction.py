@@ -20,6 +20,7 @@ from st_aggrid.grid_options_builder import GridOptionsBuilder
 #Setting page width to wide
 st.set_page_config(layout="wide")
 
+#This is to hide the above white banner appearing
 st.markdown("""
 <style>
     #MainMenu, header, footer {visibility: hidden;}
@@ -33,6 +34,8 @@ st.markdown("""
 </style>
 """,unsafe_allow_html=True)
 
+
+#This is to show the upper banner with links
 st.markdown('<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">', unsafe_allow_html=True)
 st.markdown("""
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark" style="background-color: #808080;">
@@ -53,7 +56,7 @@ st.markdown("""
 </nav>
 """, unsafe_allow_html=True)
 
-# generate country code  based on country name
+#generate country code  based on country name
 import pycountry
 def alpha3code(column):
     CODE=[]
@@ -67,10 +70,16 @@ def alpha3code(column):
             CODE.append('None')
     return CODE
 
-#Reading data
+#Reading data from Kaggle
 data=pd.read_csv("healthdata.csv")
+#cleaning data
 bmi_mean = data['bmi'].mean().round(1)
 data = data.fillna(value=bmi_mean)
+
+#Reading other datasource
+yearly=pd.read_csv("yearlystrokes.csv")
+#create a column for code
+yearly['Country_Code']=alpha3code(yearly.location)
 
 #Setting Default Theme for plotly graphs
 pio.templates.default = "simple_white"
@@ -87,13 +96,8 @@ selected = option_menu(None, ["Home", "Data", "Visuals","Exploration",'Predictio
     }
 )
 
-yearly=pd.read_csv("yearlystrokes.csv")
-# create a column for code
-yearly['Country_Code']=alpha3code(yearly.location)
-
 #Home Page
-if selected =="Home":
-    
+if selected =="Home":    
     col1,col2,col3=st.columns([4,1,4])
     with col1:
         st.subheader("Global Deaths Due to Stroke")
@@ -102,6 +106,8 @@ if selected =="Home":
         st.write("For this purpose, a sample of patients suffering from are studied and the chracteritics affecting their exposure to stroke are discussed.")
     with col3:
         st.image("1.jpg")
+
+
 #Data page
 if selected=="Data":
     col1,col2=st.columns(2)
@@ -125,7 +131,7 @@ if selected=="Data":
         AgGrid(data)
        
     
-    #Visuals Page
+#Visuals Page
 if selected=="Visuals":
     thisyear=yearly[yearly["year"]==2019]
     #Map showing death across the globe in 2019
@@ -143,13 +149,8 @@ if selected=="Visuals":
     fig.update_layout(height=600,width=400)
     fig.update_geos(projection_type="natural earth")
     st.plotly_chart(fig,use_container_width=True)        
-    
-    
+      
     st.markdown("""<hr style="height:5px;border:none;color:#00ced1;background-color:#808080;" /> """, unsafe_allow_html=True)
-    
-  
-    
-    
          
     strokeages=pd.read_csv("allages.csv")
     country_options=strokeages["Location"].unique().tolist()
@@ -259,15 +260,8 @@ if selected=="Exploration":
         colors = ['rgb(0, 0, 100)', 'rgb(0, 200, 200)']
 
 
-    #figure6=px.histogram(filter_df, x='heart_disease', color="stroke", barmode='group')
-    #st.plotly_chart(figure6,use_container_width=True)
-
-    #figure7=px.histogram(filter_df, x='hypertension', color="stroke", barmode='group')
-    #st.plotly_chart(figure7,use_container_width=True)
-
 #Prediction Page
 if selected =="Prediction":
-
     
  col11,col12,col13=st.columns([3,1,3])
  with col11:
@@ -290,7 +284,7 @@ if selected =="Prediction":
     elif gender == "Other":
               gender_inp = 2
 
-       #Ever Married
+     #Ever Married
 
     married = st.selectbox("Were you ever Married?" , ['Yes','No'])
 
@@ -298,7 +292,8 @@ if selected =="Prediction":
               married_inp = 0
     elif married == "Yes":
               married_inp = 1
-        #Work Type
+       
+    #Work Type
 
     work = st.selectbox("What do you work?" , ['Government Job','Never Worked','Private Job', "Self Employed", "Children"])
 
@@ -367,5 +362,3 @@ if selected =="Prediction":
     else:
         st.write("Take Care! Our model shows that you might have a stroke!")
 
-# Get input values - numeric variables
- #optional = st.slider('Please enter the living apartments:',min_value = 0,max_value = 5)
