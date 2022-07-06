@@ -119,7 +119,8 @@ if selected=="Data":
     with col3:
         st.image("10.jpg")
         st.subheader("Kaggle Data")
-        st.write("The sample data to the left")
+        st.write("This dataset is used to predict whether a patient is likely to get stroke based on the input parameters like gender, age, various diseases, and smoking status. Each row in the data provides relavant information about the patient.")
+        st.caption("https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset")
     
     with col4:
         AgGrid(data)
