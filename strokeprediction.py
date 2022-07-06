@@ -93,7 +93,7 @@ yearly['Country_Code']=alpha3code(yearly.location)
 
 #Home Page
 if selected =="Home":
-    col1,col2,col3:st.columns(3)
+    col1,col2,col3=st.columns(3)
         with col1:
             st.write("hi")
             st.markdown("""<hr style="height:5px;border:none;color:#00ced1;background-color:#00ced1;" /> """, unsafe_allow_html=True)
