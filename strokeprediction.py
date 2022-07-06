@@ -105,11 +105,12 @@ if selected=="Data":
     gd.configure_default_column(editable=True,groupable=True)
     col1,col2=st.columns(2)
     with col1:
-        st.header("Global Burder of Disease on Stroke")
+        st.header("First Dataset")
+        st.subheader("Global Burder of Disease on Stroke")
         st.write("The table to the left includess...")
     with col2:
         AgGrid(yearly)      
-    st.markdown("""<hr style="height:10px;border:none;color:#00ced1;background-color:#00ced1;" /> """, unsafe_allow_html=True)
+    st.markdown("""<hr style="height:5px;border:none;color:#00ced1;background-color:#00ced1;" /> """, unsafe_allow_html=True)
     col3,col4=st.columns(2)
     with col3:
         st.header("Sample Dataset on Stroke from Kaggle")
