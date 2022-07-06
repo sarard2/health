@@ -127,6 +127,13 @@ if selected=="Data":
     
     #Visuals Page
 if selected=="Visuals":
+    
+    col12, col13, col14 = st.columns(3)
+    col12.metric("Temperature", "70 °F", "1.2 °F")
+    col13.metric("Wind", "9 mph", "-8%")
+    col14.metric("Humidity", "86%", "4%")
+    st.markdown("""<hr style="height:5px;border:none;color:#00ced1;background-color:#00ced1;" /> """, unsafe_allow_html=True)
+    
     col1,col2=st.columns(2)
     with col2:
          strokeages=pd.read_csv("allages.csv")
