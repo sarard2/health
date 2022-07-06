@@ -106,7 +106,7 @@ if selected=="Data":
     gd=GridOptionsBuilder.from_dataframe(data)
     gd.configure_pagination(enabled=True)
     gd.configure_default_column(editable=True,groupable=True)
-    col1,col2=st.columns([1,2])
+    col1,col2=st.columns(2)
     with col1:
         st.image("9.jpg")
         st.header("First Dataset")
