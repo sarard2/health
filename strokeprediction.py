@@ -72,10 +72,8 @@ data=pd.read_csv("healthdata.csv")
 bmi_mean = data['bmi'].mean().round(1)
 data = data.fillna(value=bmi_mean)
 
-
-
 #Setting Default Theme for plotly graphs
-#pio.templates.default = "simple_white"
+pio.templates.default = "simple_white"
 
 #Sidebar Menu
 selected = option_menu(None, ["Home", "Data", "Visuals","Exploration",'Prediction'],
@@ -124,8 +122,9 @@ if selected=="Visuals":
                 #metric_select=st.selectbox("Which metric are you more intesrested in?",metric_options)
                 number_stroke=strokeages[strokeages["Metric"]=="Number"]
          filter_dff=number_stroke[number_stroke["Location"]==country_select]
+         st.write("You have chosen to view the number of stroke deaths in" country_select)
 
-         figure8=px.area(filter_dff, x='Year', y="val",color="Sex",title="Deaths by Stroke Through Time According to Gender",
+         figure8=px.area(filter_dff, x='Year', y="val",color="Sex",title="Number of Deaths by Stroke according to Gender",
          width=400, height=400,
          color_discrete_map={1: "cadetblue", 0: "darkturquoise"},
          template="simple_white")
