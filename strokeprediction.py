@@ -96,8 +96,10 @@ if selected =="Home":
     
     col1,col2=st.columns(2)
     with col1:
-        st.write("hi")
-        st.markdown("""<hr style="height:5px;border:none;color:#00ced1;background-color:#00ced1;" /> """, unsafe_allow_html=True)
+        st.header("Global Deaths by Stroke Analysis")
+        st.markdown("""<hr style="height:3px;border:none;color:#00ced1;background-color:#00ced1;" /> """, unsafe_allow_html=True)
+        st.write("This project focuses on analyzing the deaths related to stroke across the globe. The records of deaths between the years 2012 and 2019 are further examined.") 
+        st.write("For this purpose, a sample of patients suffering from are studied and the chracteritics affecting their exposure to stroke are discussed.")
     with col2:
         st.image("1.jpg")
 #Data page
