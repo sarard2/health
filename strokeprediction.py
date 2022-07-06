@@ -150,7 +150,7 @@ if selected=="Visuals":
     figure15.update_layout( # customize font and legend orientation & position
          legend=dict(
         title="Stroke", orientation="h", y=1, yanchor="bottom", x=0.5, xanchor="center"))
-    st.plotly_chart(figure1,use_container_width=True)    
+    st.plotly_chart(figure15,use_container_width=True)    
     #Map showing death across the globe in 2019
     st.subheader("Stroke Deaths across the Globe in 2019")
     fig = go.Figure(data=go.Choropleth(
