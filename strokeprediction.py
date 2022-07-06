@@ -103,14 +103,20 @@ if selected=="Data":
     gd=GridOptionsBuilder.from_dataframe(data)
     gd.configure_pagination(enabled=True)
     gd.configure_default_column(editable=True,groupable=True)
-    col1,col2=st.columns(2)
+    col1,col2=st.columns([1,2])
     with col1:
         st.header("Global Burder of Disease on Stroke")
-        AgGrid(yearly)
+        st.write("The table to the left includess...")
     with col2:
-        st.header("Sample Dataset on Stroke from Kaggle")
+        AgGrid(yearly)
+        
+    col3,col4=st.columns([2,1])
+    with col3:
         AgGrid(data)
-
+    with col4:
+        st.header("Sample Dataset on Stroke from Kaggle")
+        st.write("The sample data to the left")
+        
         #Visuals Page
 if selected=="Visuals":
     col1,col2=st.columns(2)
