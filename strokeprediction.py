@@ -93,7 +93,8 @@ yearly['Country_Code']=alpha3code(yearly.location)
 
 #Home Page
 if selected =="Home":
-    
+    from st_card import st_card
+    st_card('Completed Orders', value=76.4, show_progress=True)
     col1,col2=st.columns(2)
     with col1:
         st.write("hi")
