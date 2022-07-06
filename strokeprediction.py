@@ -344,12 +344,12 @@ if selected =="Prediction":
 #Prediction given the following variables
      par = [gender_inp , married_inp , work_inp ,resi_inp, smoke_inp,age,hype_inp,heart_inp,glucose,bmi]
      st.image("3.jpg")
-     if st.checkbox("Check Your Health Status"):
+     if st.button("Click to Check Your Health Status"):
            pred = lrmodel.predict([par])
            if pred== 0:
-               st.write('You will not have a stroke')
+               st.write('Congrats, you will not have a stroke in the near future!')
            else:
-            st.write("You Might Have a stroke")
+            st.write("Take Care! You might have a stroke!")
 
 # Get input values - numeric variables
  #optional = st.slider('Please enter the living apartments:',min_value = 0,max_value = 5)
