@@ -102,7 +102,7 @@ if selected =="Home":
     with col1:
         st.subheader("Global Deaths Due to Stroke")
         st.write("This project focuses on analyzing the deaths related to stroke across the globe. The records of deaths between the years 2012 and 2019 are further examined.") 
-        st.write("For this purpose, a sample of patients suffering from are studied and the chracteritics affecting their exposure to stroke are discussed.")
+        st.write("The project as well examines a sample of patients suffering from stroke. The chracteritics affecting the patient's exposure to stroke are as well highlighted.")
     with col3:
         st.image("1.jpg")
     st.markdown("""<hr style="height:3px;border:none;color:#00ced1;background-color:#00ced1;" /> """, unsafe_allow_html=True)
@@ -268,6 +268,7 @@ if selected =="Prediction":
         st.subheader("Know More About Your Health Status")
         st.write("According to the World Health Organization (WHO) stroke is the 2nd leading cause of death globally, responsible for approximately 11% of total deaths.")
         st.write("Based on the patient's historical data that suffered from having a stroke, a machine learning model is built to help predict the occurence of stroke.")
+        st.write("This model predicts the probability of stroke occurrence with 95% accuracy.")
         st.caption("Now is your time to identify your health risks!")
  with col13:
         st.image("2.jpg")
