@@ -261,7 +261,7 @@ if selected=="Exploration":
 if selected =="Prediction":
 
     
- col11,col12,col13=st.columns([2,1,2])
+ col11,col12,col13=st.columns([3,1,3])
  with col11:
         st.subheader("Know More About Your Health Status")
         st.write("According to the World Health Organization (WHO) stroke is the 2nd leading cause of death globally, responsible for approximately 11% of total deaths.")
