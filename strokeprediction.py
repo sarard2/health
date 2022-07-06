@@ -243,10 +243,10 @@ if selected =="Prediction":
 
     
  col11,col12=st.columns(3)
-    with col11:
+ with col11:
         st.header("Check Your Health Status!")
         st.write("Now is your time to predict whether you are subjected to stroke in the near future")
-     with col12:
+ with col12:
         st.write("Try the below now")
  st.markdown("""<hr style="height:15px;border:none;color:#00ced1;background-color:#00ced1;" /> """, unsafe_allow_html=True)
  col1,col2,col3=st.columns(3)
