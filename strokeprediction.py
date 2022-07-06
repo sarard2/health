@@ -127,12 +127,6 @@ if selected=="Data":
     
     #Visuals Page
 if selected=="Visuals":
-    
-    col12, col13, col14 = st.columns(3)
-    col12.metric("Temperature", "70 °F", "1.2 °F")
-    col13.metric("Wind", "9 mph", "-8%")
-    col14.metric("Humidity", "86%", "4%")
-    st.markdown("""<hr style="height:5px;border:none;color:#00ced1;background-color:#00ced1;" /> """, unsafe_allow_html=True)
     strokeages=pd.read_csv("allages.csv")
     country_options=strokeages["Location"].unique().tolist()
     col1,col2=st.columns(2)
@@ -142,7 +136,7 @@ if selected=="Visuals":
     filter_dff=number_stroke[number_stroke["Location"]==country_select]
     
     with col1:
-        st.header("Number of Death Due to Stroke in",country_select)
+        st.write("Number of Death Due to Stroke in",country_select)
         st.markdown("""<hr style="height:3px;border:none;color:#00ced1;background-color:#00ced1;" /> """, unsafe_allow_html=True)
     figure8=px.area(filter_dff, x='Year', y="val",color="Sex",title="",
     width=400, height=400,
