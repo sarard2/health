@@ -127,32 +127,6 @@ if selected=="Data":
     
     #Visuals Page
 if selected=="Visuals":
-    strokeages=pd.read_csv("allages.csv")
-    country_options=strokeages["Location"].unique().tolist()
-    col1,col2=st.columns(2)
-    with col2: 
-        country_select=st.selectbox('In which country do you want to trace the number of deaths by stroke?',country_options)         
-    number_stroke=strokeages[strokeages["Metric"]=="Number"]
-    filter_dff=number_stroke[number_stroke["Location"]==country_select]
-    
-    with col1:
-        st.subheader("Number of Deaths Due to Stroke among Gender")
-        
-    figure8=px.area(filter_dff, x='Year', y="val",color="Sex",title="",
-    width=400, height=400,
-    color_discrete_map={1: "cadetblue", 0: "darkturquoise"},
-    template="simple_white")
-    figure8.update_layout(xaxis_title=None,yaxis_title=None)
-    figure8.update_xaxes(showgrid=False,zeroline=False)
-    figure8.update_yaxes(showgrid=False,showticklabels = True)
-    figure8.update_layout( # customize font and legend orientation & position
-    legend=dict(
-    title="Gender", orientation="h",y=1, yanchor="bottom", x=0.5, xanchor="center"))
-    st.plotly_chart(figure8,use_container_width=True)       
-    
-    
-    st.markdown("""<hr style="height:5px;border:none;color:#00ced1;background-color:#808080;" /> """, unsafe_allow_html=True)
-    
     thisyear=yearly[yearly["year"]==2019]
     #Map showing death across the globe in 2019
     st.subheader("Stroke Deaths across the Globe in 2019")
@@ -168,11 +142,37 @@ if selected=="Visuals":
     colorbar_title = 'Deaths',))
     fig.update_layout(height=600,width=400)
     fig.update_geos(projection_type="natural earth")
-    st.plotly_chart(fig,use_container_width=True)    
+    st.plotly_chart(fig,use_container_width=True)        
+    
+    
+    st.markdown("""<hr style="height:5px;border:none;color:#00ced1;background-color:#808080;" /> """, unsafe_allow_html=True)
+    
+  
     
     
          
-
+    strokeages=pd.read_csv("allages.csv")
+    country_options=strokeages["Location"].unique().tolist()
+    col1,col2=st.columns(2)
+    with col2: 
+        country_select=st.selectbox('In which country do you want to trace the number of deaths by stroke?',country_options)         
+    number_stroke=strokeages[strokeages["Metric"]=="Number"]
+    filter_dff=number_stroke[number_stroke["Location"]==country_select]
+    
+    with col1:
+        st.subheader("Number of Stroke Deaths among Gender")
+        
+    figure8=px.area(filter_dff, x='Year', y="val",color="Sex",title="",
+    width=400, height=400,
+    color_discrete_map={1: "cadetblue", 0: "darkturquoise"},
+    template="simple_white")
+    figure8.update_layout(xaxis_title=None,yaxis_title=None)
+    figure8.update_xaxes(showgrid=False,zeroline=False)
+    figure8.update_yaxes(showgrid=False,showticklabels = True)
+    figure8.update_layout( # customize font and legend orientation & position
+    legend=dict(
+    title="Gender", orientation="h",y=1, yanchor="bottom", x=0.5, xanchor="center"))
+    st.plotly_chart(figure8,use_container_width=True) 
 
 
 #Exploration Page
