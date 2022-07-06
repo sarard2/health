@@ -121,7 +121,7 @@ if selected=="Visuals":
                 country_select=st.selectbox('In which country do you want to trace the number of deaths by stroke?',country_options)         
                 number_stroke=strokeages[strokeages["Metric"]=="Number"]
          filter_dff=number_stroke[number_stroke["Location"]==country_select]
-         figure8=px.area(filter_dff, x='Year', y="val",color="Sex",title="Number of Deaths by Stroke according to Gender",
+         figure8=px.area(filter_dff, x='Year', y="val",color="Sex",title="Number of Deaths by Stroke",
          width=400, height=400,
          color_discrete_map={1: "cadetblue", 0: "darkturquoise"},
          template="simple_white")
@@ -130,7 +130,7 @@ if selected=="Visuals":
          figure8.update_yaxes(showgrid=False,showticklabels = True)
          figure8.update_layout( # customize font and legend orientation & position
          legend=dict(
-         title="Stroke", orientation="h", y=1, yanchor="bottom", x=0.5, xanchor="center"))
+         title="Sex", orientation="h", y=1, yanchor="bottom", x=0.5, xanchor="center"))
          st.plotly_chart(figure8,use_container_width=True)
          st.write("You have chosen to view the number of stroke deaths in",country_select)
 
