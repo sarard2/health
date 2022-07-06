@@ -143,7 +143,7 @@ if selected=="Visuals":
          country_select=st.selectbox('In which country do you want to trace the number of deaths by stroke?',country_options)         
          number_stroke=strokeages[strokeages["Metric"]=="Number"]
          filter_dff=number_stroke[number_stroke["Location"]==country_select]
-         st.caption("You have chosen to view the number of stroke deaths in",country_select)
+         st.write("You have chosen to view the number of stroke deaths in",country_select)
          figure8=px.area(filter_dff, x='Year', y="val",color="Sex",title="Number of Deaths by Stroke",
          width=400, height=400,
          color_discrete_map={1: "cadetblue", 0: "darkturquoise"},
