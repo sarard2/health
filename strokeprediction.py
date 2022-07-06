@@ -136,7 +136,7 @@ if selected=="Visuals":
     filter_dff=number_stroke[number_stroke["Location"]==country_select]
     
     with col1:
-        st.subheader("Number of Deaths Due to Stroke among Gender)
+        st.subheader("Number of Deaths Due to Stroke among Gender")
         
     figure8=px.area(filter_dff, x='Year', y="val",color="Gender",title="",
     width=400, height=400,
