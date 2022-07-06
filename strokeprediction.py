@@ -94,7 +94,7 @@ yearly['Country_Code']=alpha3code(yearly.location)
 #Home Page
 if selected =="Home":
     st.write("hi")
-    st.markdown("""<hr style="height:10px;border:none;color:#333;background-color:#333;" /> """, unsafe_allow_html=True)
+    st.markdown("""<hr style="height:3px;border:none;color:#333;background-color:"darkturquoise";" /> """, unsafe_allow_html=True)
 
 #Overview page
 if selected=="Data":
