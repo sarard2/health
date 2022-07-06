@@ -93,11 +93,13 @@ yearly['Country_Code']=alpha3code(yearly.location)
 
 #Home Page
 if selected =="Home":
-    st.image("1.jpg")
-    col1,col2,col3=st.columns(3)
+    
+    col1,col2=st.columns(2)
     with col1:
         st.write("hi")
         st.markdown("""<hr style="height:5px;border:none;color:#00ced1;background-color:#00ced1;" /> """, unsafe_allow_html=True)
+    with col2:
+        st.image("1.jpg")
 #Data page
 if selected=="Data":
 
