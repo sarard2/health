@@ -263,8 +263,9 @@ if selected =="Prediction":
     
  col11,col12=st.columns(2)
  with col11:
-        st.header("Get Your Health Status Checked Now!")
-        st.write("Now is your time to predict whether you are subjected to stroke in the near future")
+        st.subheader("Know More About Your Health Status")
+        st.write("Based on the patient's historical data that suffered from having a stroke, a machine learning model is built to help predict the occurence of stroke.")
+        st.caption("Now is your time to identify your health risks!")
  with col12:
         st.image("2.jpg")
  st.markdown("""<hr style="height:15px;border:none;color:#00ced1;background-color:#00ced1;" /> """, unsafe_allow_html=True)
