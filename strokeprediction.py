@@ -182,7 +182,9 @@ if selected=="Exploration":
     col13.metric("Wind", "9 mph", "-8%")
     col14.metric("Humidity", "86%", "4%")
     
-    my_expander = st.expander(label='Filter the Graphs')
+    st.markdown("""<hr style="height:5px;border:none;color:#00ced1;background-color:#808080;" /> """, unsafe_allow_html=True)
+    
+    my_expander = st.expander(label='You can now filter the graphs below!')
     with my_expander:
        
         col3,col4=st.columns(2)
@@ -228,6 +230,15 @@ if selected=="Exploration":
         figure10.update_yaxes(showgrid=False,showticklabels = True)
         st.plotly_chart(figure10,use_container_width=True)
     with col2:
+        figure9=px.box(data, x="stroke", y="avg_glucose_level",title="Stroke according to Glucose Level",
+        width=400, height=400,
+        color_discrete_map={1: "cadetblue", 0: "darkturquoise"},
+        template="simple_white")
+        figure9.update_layout(xaxis_title=None,yaxis_title=None)
+        figure9.update_xaxes(showgrid=False,zeroline=False)
+        figure9.update_yaxes(showgrid=False,showticklabels = True)
+        st.plotly_chart(figure9,use_container_width=True)
+
         figure3=px.histogram(filter_df, y='ever_married', color="stroke", barmode='group',title="Stroke according to Marriage Status",
         width=400, height=400,
         color_discrete_map={1: "cadetblue", 0: "darkturquoise"},
@@ -247,14 +258,6 @@ if selected=="Exploration":
         st.plotly_chart(figure4,use_container_width=True)
         colors = ['rgb(0, 0, 100)', 'rgb(0, 200, 200)']
 
-        figure9=px.box(data, x="stroke", y="avg_glucose_level",title="Stroke according to Glucose Level",
-        width=400, height=400,
-        color_discrete_map={1: "cadetblue", 0: "darkturquoise"},
-        template="simple_white")
-        figure9.update_layout(xaxis_title=None,yaxis_title=None)
-        figure9.update_xaxes(showgrid=False,zeroline=False)
-        figure9.update_yaxes(showgrid=False,showticklabels = True)
-        st.plotly_chart(figure9,use_container_width=True)
 
     #figure6=px.histogram(filter_df, x='heart_disease', color="stroke", barmode='group')
     #st.plotly_chart(figure6,use_container_width=True)
