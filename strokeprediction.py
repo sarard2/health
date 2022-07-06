@@ -351,7 +351,8 @@ if selected =="Prediction":
 #Prediction given the following variables
      par = [gender_inp , married_inp , work_inp ,resi_inp, smoke_inp,age,hype_inp,heart_inp,glucose,bmi]
      st.image("3.jpg")
-     if st.button("Click to Check Your Health Status"):
+     
+  if st.button("Click to Check Your Health Status"):
            pred = lrmodel.predict([par])
            if pred== 0:
                st.write('Congrats, you will not have a stroke in the near future!')
