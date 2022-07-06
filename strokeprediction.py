@@ -140,8 +140,8 @@ if selected=="Visuals":
     filter_dff=number_stroke[number_stroke["Location"]==country_select]
     col1,col2=st.columns(2)
     with col1:
-        st.subheader("The graph below shows the Number of Death Due to Stroke in",country_select)
-        st.markdown("""<hr style="height:2px;border:none;color:#00ced1;background-color:#00ced1;" /> """, unsafe_allow_html=True)
+        st.header("Number of Death Due to Stroke in",country_select)
+        st.markdown("""<hr style="height:3px;border:none;color:#00ced1;background-color:#00ced1;" /> """, unsafe_allow_html=True)
     figure8=px.area(filter_dff, x='Year', y="val",color="Sex",title="",
     width=400, height=400,
     color_discrete_map={1: "cadetblue", 0: "darkturquoise"},
