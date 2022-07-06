@@ -179,6 +179,11 @@ if selected=="Visuals":
 
 #Exploration Page
 if selected=="Exploration":
+    col12, col13, col14 = st.columns(3)
+    col12.metric("Temperature", "70 °F", "1.2 °F")
+    col13.metric("Wind", "9 mph", "-8%")
+    col14.metric("Humidity", "86%", "4%")
+    
     my_expander = st.expander(label='Filter the Graphs')
     with my_expander:
        
