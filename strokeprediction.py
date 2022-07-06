@@ -161,7 +161,7 @@ if selected=="Visuals":
     country_options=strokeages["Location"].unique().tolist()
     col1,col2=st.columns(2)
     with col2: 
-        country_select=st.selectbox('In which country do you want to trace the number of deaths by stroke?',country_options)         
+        country_select=st.selectbox('Choose a country to explore the stroke deaths level:',country_options)         
     number_stroke=strokeages[strokeages["Metric"]=="Number"]
     filter_dff=number_stroke[number_stroke["Location"]==country_select]
     
