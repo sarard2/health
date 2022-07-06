@@ -203,19 +203,8 @@ if selected=="Exploration":
         figure1.update_layout(xaxis_title=None,yaxis_title=None)
         figure1.update_xaxes(showgrid=False,zeroline=False)
         figure1.update_yaxes(showgrid=False,showticklabels = True)
-        
         st.plotly_chart(figure1,use_container_width=True)
-    with col1:
-        figure2=px.histogram(filter_df, y='work_type', color="stroke", barmode='group',title="Stroke according to Work Type",
-        width=400, height=400,
-        color_discrete_map={1: "cadetblue", 0: "darkturquoise"},
-        template="simple_white")
-        figure2.update_layout(xaxis_title=None,yaxis_title=None)
-        figure2.update_xaxes(showgrid=False,zeroline=False)
-        figure2.update_yaxes(showgrid=False,showticklabels = True)
         
-        st.plotly_chart(figure2,use_container_width=True)
-
         figure10=px.box(data, x="stroke", y="bmi",title="Stroke according to BMI",
         width=400, height=400,
         color_discrete_map={1: "cadetblue", 0: "darkturquoise"},
@@ -224,6 +213,17 @@ if selected=="Exploration":
         figure10.update_xaxes(showgrid=False,zeroline=False)
         figure10.update_yaxes(showgrid=False,showticklabels = True)
         st.plotly_chart(figure10,use_container_width=True)
+ 
+        figure2=px.histogram(filter_df, y='work_type', color="stroke", barmode='group',title="Stroke according to Work Type",
+        width=400, height=400,
+        color_discrete_map={1: "cadetblue", 0: "darkturquoise"},
+        template="simple_white")
+        figure2.update_layout(xaxis_title=None,yaxis_title=None)
+        figure2.update_xaxes(showgrid=False,zeroline=False)
+        figure2.update_yaxes(showgrid=False,showticklabels = True)   
+        st.plotly_chart(figure2,use_container_width=True)
+
+
     with col2:
         figure9=px.box(data, x="stroke", y="avg_glucose_level",title="Stroke according to Glucose Level",
         width=400, height=400,
@@ -242,7 +242,7 @@ if selected=="Exploration":
         figure3.update_xaxes(showgrid=False,zeroline=False)
         figure3.update_yaxes(showgrid=False,showticklabels = True)
         st.plotly_chart(figure3,use_container_width=True)
-    with col2:
+   
         figure4=px.histogram(filter_df, y='smoking_status', color="stroke", barmode='group',title="Stroke according to Smoking Status",
         width=400, height=400,
         color_discrete_map={1: "cadetblue", 0: "darkturquoise"},
