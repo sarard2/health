@@ -112,18 +112,15 @@ if selected=="Data":
         #Visuals Page
 if selected=="Visuals":
     col1,col2=st.columns(2)
-    with col1:
+    with col2:
          strokeages=pd.read_csv("allages.csv")
          country_options=strokeages["Location"].unique().tolist()
-         #metric_options=strokeages["Metric"].unique().tolist()
+         
          my_expander1 = st.expander(label='Expand to edit the country')
          with my_expander1:
-                country_select=st.selectbox('In which country do you want to trace the number of deaths by stroke?',country_options)
-                #metric_select=st.selectbox("Which metric are you more intesrested in?",metric_options)
+                country_select=st.selectbox('In which country do you want to trace the number of deaths by stroke?',country_options)         
                 number_stroke=strokeages[strokeages["Metric"]=="Number"]
          filter_dff=number_stroke[number_stroke["Location"]==country_select]
-         st.write("You have chosen to view the number of stroke deaths in",country_select)
-
          figure8=px.area(filter_dff, x='Year', y="val",color="Sex",title="Number of Deaths by Stroke according to Gender",
          width=400, height=400,
          color_discrete_map={1: "cadetblue", 0: "darkturquoise"},
@@ -135,9 +132,10 @@ if selected=="Visuals":
          legend=dict(
          title="Stroke", orientation="h", y=1, yanchor="bottom", x=0.5, xanchor="center"))
          st.plotly_chart(figure8,use_container_width=True)
+         st.write("You have chosen to view the number of stroke deaths in",country_select)
 
 
-    with col2:
+    with col1:
         thisyear=yearly[yearly["year"]==2019]
         #Map showing death across the globe in 2019
         fig = go.Figure(data=go.Choropleth(
