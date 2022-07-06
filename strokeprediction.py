@@ -102,26 +102,23 @@ if selected =="Home":
         st.image("1.jpg")
 #Data page
 if selected=="Data":
-
-    gd=GridOptionsBuilder.from_dataframe(data)
-    gd.configure_pagination(enabled=True)
-    gd.configure_default_column(editable=True,groupable=True)
     col1,col2=st.columns(2)
     with col1:
         st.image("9.jpg")
         st.subheader("Global Burden of Disease Data")
         st.write("This data is retrieved from the Global Burden of Disease which provides a tool to quantify health loss from hundreds of diseases. The main focus is on death due to stroke worldwide")
-        st.caption("Note that the data includes data on death from 2012 until 2019")
+        st.caption("Note that the data includes records on death due to stroke from 2012 until 2019")
     with col2:
         AgGrid(yearly)      
     st.markdown("""<hr style="height:5px;border:none;color:#00ced1;background-color:#00ced1;" /> """, unsafe_allow_html=True)
     col3,col4=st.columns(2)
+    
     with col3:
         st.image("10.jpg")
         st.subheader("Kaggle Data")
         st.write("This dataset is used to predict whether a patient is likely to get stroke based on the input parameters like gender, age, various diseases, and smoking status. Each row in the data provides relavant information about the patient.")
         st.caption("https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset")
-    
+        
     with col4:
         AgGrid(data)
        
