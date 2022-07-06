@@ -117,6 +117,7 @@ if selected=="Data":
     st.markdown("""<hr style="height:5px;border:none;color:#00ced1;background-color:#00ced1;" /> """, unsafe_allow_html=True)
     col3,col4=st.columns(2)
     with col3:
+        st.image("10.jpg")
         st.header("Sample Dataset on Stroke from Kaggle")
         st.write("The sample data to the left")
     
