@@ -101,13 +101,11 @@ if selected =="Home":
     col1,col2,col3=st.columns([4,1,4])
     with col1:
         st.subheader("Global Deaths Due to Stroke")
-        st.markdown("""<hr style="height:3px;border:none;color:#00ced1;background-color:#00ced1;" /> """, unsafe_allow_html=True)
         st.write("This project focuses on analyzing the deaths related to stroke across the globe. The records of deaths between the years 2012 and 2019 are further examined.") 
         st.write("For this purpose, a sample of patients suffering from are studied and the chracteritics affecting their exposure to stroke are discussed.")
     with col3:
         st.image("1.jpg")
-    st.markdown("""<hr style="height:5px;border:none;color:#00ced1;background-color:#808080;" /> """, unsafe_allow_html=True)
-
+    st.markdown("""<hr style="height:3px;border:none;color:#00ced1;background-color:#00ced1;" /> """, unsafe_allow_html=True)
     col12, col13, col14 = st.columns(3)
     col12.metric("Temperature", "70 °F", "1.2 °F")
     col13.metric("Wind", "9 mph", "-8%")
