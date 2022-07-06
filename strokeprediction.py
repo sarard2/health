@@ -261,13 +261,13 @@ if selected=="Exploration":
 if selected =="Prediction":
 
     
- col11,col12=st.columns(2)
+ col11,col12,col13=st.columns(3)
  with col11:
         st.subheader("Know More About Your Health Status")
         st.write("According to the World Health Organization (WHO) stroke is the 2nd leading cause of death globally, responsible for approximately 11% of total deaths.")
         st.write("Based on the patient's historical data that suffered from having a stroke, a machine learning model is built to help predict the occurence of stroke.")
         st.caption("Now is your time to identify your health risks!")
- with col12:
+ with col13:
         st.image("2.jpg")
  st.markdown("""<hr style="height:15px;border:none;color:#00ced1;background-color:#00ced1;" /> """, unsafe_allow_html=True)
  col1,col2,col3=st.columns(3)
