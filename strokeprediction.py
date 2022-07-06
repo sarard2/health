@@ -353,11 +353,11 @@ if selected =="Prediction":
      st.image("3.jpg")
      
   if st.button("Click to Check Your Health Status"):
-           pred = lrmodel.predict([par])
-           if pred== 0:
-               st.write('Congrats, you will not have a stroke in the near future!')
-           else:
-            st.write("Take Care! You might have a stroke!")
+    pred = lrmodel.predict([par])
+    if pred== 0:
+        st.write('Congrats, our model shows that you will not have a stroke in the near future!')
+    else:
+        st.write("Take Care! Our model shows that you might have a stroke!")
 
 # Get input values - numeric variables
  #optional = st.slider('Please enter the living apartments:',min_value = 0,max_value = 5)
