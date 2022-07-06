@@ -242,7 +242,7 @@ if selected=="Exploration":
 if selected =="Prediction":
 
     
- col11,col12=st.columns(3)
+ col11,col12=st.columns(2)
  with col11:
         st.header("Check Your Health Status!")
         st.write("Now is your time to predict whether you are subjected to stroke in the near future")
