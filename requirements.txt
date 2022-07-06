@@ -8,4 +8,4 @@ streamlit-option-menu
 sklearn
 pycountry
 streamlit-agGrid
-st_card
+streamlit-st_card
