@@ -108,6 +108,7 @@ if selected=="Data":
     gd.configure_default_column(editable=True,groupable=True)
     col1,col2=st.columns(2)
     with col1:
+        st.image("9.jpg")
         st.header("First Dataset")
         st.subheader("Global Burder of Disease on Stroke")
         st.write("The table to the left includess...")
