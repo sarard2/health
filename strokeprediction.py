@@ -134,8 +134,7 @@ if selected=="Visuals":
     col14.metric("Humidity", "86%", "4%")
     st.markdown("""<hr style="height:5px;border:none;color:#00ced1;background-color:#00ced1;" /> """, unsafe_allow_html=True)
     
-    col1,col2=st.columns(2)
-    with col2:
+    
          strokeages=pd.read_csv("allages.csv")
          country_options=strokeages["Location"].unique().tolist()
          
@@ -158,7 +157,7 @@ if selected=="Visuals":
          
 
 
-    with col1:
+    
         thisyear=yearly[yearly["year"]==2019]
         #Map showing death across the globe in 2019
         fig = go.Figure(data=go.Choropleth(
