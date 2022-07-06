@@ -102,7 +102,7 @@ if selected =="Home":
     with col1:
         st.subheader("Global Deaths Due to Stroke")
         st.write("This project focuses on analyzing the deaths related to stroke across the globe. The records of deaths between the years 2012 and 2019 are further examined.") 
-        st.write("The project as well examines a sample of patients suffering from stroke. The chracteritics affecting the patient's exposure to stroke are as well highlighted.")
+        st.write("The project as well examines a sample of patients suffering from stroke. The characteristics affecting the patient's exposure to stroke are as well highlighted.")
     with col3:
         st.image("1.jpg")
     st.markdown("""<hr style="height:3px;border:none;color:#00ced1;background-color:#00ced1;" /> """, unsafe_allow_html=True)
