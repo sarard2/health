@@ -97,27 +97,28 @@ if selected =="Home":
     with col1:
         st.write("hi")
         st.markdown("""<hr style="height:5px;border:none;color:#00ced1;background-color:#00ced1;" /> """, unsafe_allow_html=True)
-#Overview page
+#Data page
 if selected=="Data":
 
     gd=GridOptionsBuilder.from_dataframe(data)
     gd.configure_pagination(enabled=True)
     gd.configure_default_column(editable=True,groupable=True)
-    col1,col2=st.columns([1,2])
+    col1,col2=st.columns(2)
     with col1:
         st.header("Global Burder of Disease on Stroke")
         st.write("The table to the left includess...")
     with col2:
-        AgGrid(yearly)
-        
-    col3,col4=st.columns([2,1])
+        AgGrid(yearly)      
+    col3,col4=st.columns(2)
     with col3:
-        AgGrid(data)
-    with col4:
         st.header("Sample Dataset on Stroke from Kaggle")
         st.write("The sample data to the left")
-        
-        #Visuals Page
+    st.markdown("""<hr style="height:10px;border:none;color:#00ced1;background-color:#00ced1;" /> """, unsafe_allow_html=True)
+    with col4:
+        AgGrid(data)
+       
+    
+    #Visuals Page
 if selected=="Visuals":
     col1,col2=st.columns(2)
     with col2:
