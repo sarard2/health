@@ -94,9 +94,9 @@ yearly['Country_Code']=alpha3code(yearly.location)
 #Home Page
 if selected =="Home":
     
-    col1,col2,col3=st.columns([3,1,3])
+    col1,col2,col3=st.columns([4,1,4])
     with col1:
-        st.subheader("Global Deaths by Stroke Analysis")
+        st.subheader("Global Deaths Due to Stroke")
         st.markdown("""<hr style="height:3px;border:none;color:#00ced1;background-color:#00ced1;" /> """, unsafe_allow_html=True)
         st.write("This project focuses on analyzing the deaths related to stroke across the globe. The records of deaths between the years 2012 and 2019 are further examined.") 
         st.write("For this purpose, a sample of patients suffering from are studied and the chracteritics affecting their exposure to stroke are discussed.")
