@@ -140,7 +140,7 @@ if selected=="Data":
 if selected=="Visuals":
     thisyear=yearly[yearly["year"]==2019]
     lebanon=thisyear[thisyear["location"]=="Lebanon"]
-    figure15=px.bar(lebanon, x='2015',y="val",title="Stroke according to Residence Type",
+    figure15=px.bar(lebanon, x='year',y="val",title="Stroke according to Residence Type",
         width=400, height=400,
         color_discrete_map={1: "cadetblue", 0: "darkturquoise"},
         template="simple_white")
