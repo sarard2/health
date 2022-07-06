@@ -122,7 +122,7 @@ if selected=="Visuals":
                 #metric_select=st.selectbox("Which metric are you more intesrested in?",metric_options)
                 number_stroke=strokeages[strokeages["Metric"]=="Number"]
          filter_dff=number_stroke[number_stroke["Location"]==country_select]
-         st.write("You have chosen to view the number of stroke deaths in" country_select)
+         st.write("You have chosen to view the number of stroke deaths in",country_select)
 
          figure8=px.area(filter_dff, x='Year', y="val",color="Sex",title="Number of Deaths by Stroke according to Gender",
          width=400, height=400,
