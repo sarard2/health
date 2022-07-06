@@ -176,9 +176,7 @@ if selected=="Visuals":
     figure8.update_layout(xaxis_title=None,yaxis_title=None)
     figure8.update_xaxes(showgrid=False,zeroline=False)
     figure8.update_yaxes(showgrid=False,showticklabels = True)
-    figure8.update_layout( # customize font and legend orientation & position
-    legend=dict(
-    title="Gender", orientation="h",y=1, yanchor="bottom", x=0.5, xanchor="center"))
+   
     st.plotly_chart(figure8,use_container_width=True) 
 
 
@@ -205,9 +203,7 @@ if selected=="Exploration":
         figure1.update_layout(xaxis_title=None,yaxis_title=None)
         figure1.update_xaxes(showgrid=False,zeroline=False)
         figure1.update_yaxes(showgrid=False,showticklabels = True)
-        figure1.update_layout( # customize font and legend orientation & position
-        legend=dict(
-        title="Stroke", orientation="h", y=1, yanchor="bottom", x=0.5, xanchor="center"))
+        
         st.plotly_chart(figure1,use_container_width=True)
     with col1:
         figure2=px.histogram(filter_df, y='work_type', color="stroke", barmode='group',title="Stroke according to Work Type",
@@ -217,9 +213,7 @@ if selected=="Exploration":
         figure2.update_layout(xaxis_title=None,yaxis_title=None)
         figure2.update_xaxes(showgrid=False,zeroline=False)
         figure2.update_yaxes(showgrid=False,showticklabels = True)
-        figure2.update_layout( # customize font and legend orientation & position
-        legend=dict(
-        title="Stroke", orientation="h", y=1, yanchor="bottom", x=0.5, xanchor="center"))
+        
         st.plotly_chart(figure2,use_container_width=True)
 
         figure10=px.box(data, x="stroke", y="bmi",title="Stroke according to BMI",
