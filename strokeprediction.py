@@ -106,7 +106,14 @@ if selected =="Home":
         st.write("For this purpose, a sample of patients suffering from are studied and the chracteritics affecting their exposure to stroke are discussed.")
     with col3:
         st.image("1.jpg")
+    st.markdown("""<hr style="height:5px;border:none;color:#00ced1;background-color:#808080;" /> """, unsafe_allow_html=True)
 
+    col12, col13, col14 = st.columns(3)
+    col12.metric("Temperature", "70 °F", "1.2 °F")
+    col13.metric("Wind", "9 mph", "-8%")
+    col14.metric("Humidity", "86%", "4%")
+    
+    
 
 #Data page
 if selected=="Data":
@@ -178,12 +185,7 @@ if selected=="Visuals":
 
 #Exploration Page
 if selected=="Exploration":
-    col12, col13, col14 = st.columns(3)
-    col12.metric("Temperature", "70 °F", "1.2 °F")
-    col13.metric("Wind", "9 mph", "-8%")
-    col14.metric("Humidity", "86%", "4%")
     
-    st.markdown("""<hr style="height:5px;border:none;color:#00ced1;background-color:#808080;" /> """, unsafe_allow_html=True)
     
     my_expander = st.expander(label='You can now filter the graphs below!')
     with my_expander:
