@@ -169,7 +169,7 @@ if selected=="Visuals":
     with col1:
         st.subheader("Number of Stroke Deaths among Gender")
         
-    figure8=px.area(filter_dff, x='Year', y="val",color="Sex",title="",
+    figure8=px.line(filter_dff, x='Year', y="val",color="Sex",title="",
     width=400, height=400,
     color_discrete_map={1: "cadetblue", 0: "darkturquoise"},
     template="simple_white")
