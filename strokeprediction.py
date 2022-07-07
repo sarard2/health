@@ -353,7 +353,7 @@ if selected =="Prediction":
  if st.button("Click to Check Your Health Status"):
     pred = lrmodel.predict([par])
     if pred== 0:
-        st.write('Congrats, our model shows that you will not have a stroke in the near future!')
+        st.write('You are not a candidate to sustain a stroke')
     else:
-        st.write("Take Care! Our model shows that you might have a stroke!")
+        st.write("You are a candidate to have a stroke")
 
